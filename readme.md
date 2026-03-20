@@ -1,7 +1,9 @@
 # I Guess Bro
 
 ## How 2 Play
-Go 2 [This]() link
+Go 2 [This](https://qinyuehaothomas.github.io/IGuessBro/) link , UI is quite nice, Plz give it a try
+
+UI Looks quite nice, give it a try (I spent 2 days coding it)
 
 1. Think of a number 1~N (N is between 27 to 99)
 
