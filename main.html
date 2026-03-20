@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>I Guess Bro</title>
+    <!-- Make sure your rendered.css includes Tailwind v4 -->
+    <link rel="stylesheet" type="text/css" href="rendered.css">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="animation.js"></script>
+</head>
+<body class="bg-gray-800 relative">
+
+    <!-- FIXME: Lowk a good idea is to screw scroll lock and just dump eveything into one page -->
+
+    
+    <div id="start" class="absolute w-screen h-screen flex flex-col flex-none  items-center justify-center  gap-4 ">
+
+        <h1 class="text-[clamp(1rem,4vw,2.5rem)] text-center">Think of A Number from 1 to</h1>
+        <input id="max_guess" name="max_guess" type="number" step="1" value="81" required 
+            class="text-center text-[4rem] max-w-20 bg-transparent border-0 border-G/50 outline-none transition-all duration-200 hover:border-b-4">
+        
+        <div class="group">
+            <p for="howto" class="peer text-1rem text-G/75 cursor-pointer select-none">
+                How to Play
+            </p>
+            <ol class="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-300 bg-gray-800 rounded text-sm text-G/75 max-w-md list-decimal list-inside">
+                <li>Think of a number between 1 and the max you set.</li>
+                <li>I'll guess by showing you cards.</li>
+                <li>Tell me the color of your number. Answer honestly.</li>
+                <li>I'll reveal your number using magic!</li>
+            </ol>
+
+        </div>
+
+        <button id="start_btn" class="text-[1rem] px-8 py-3 bg-G/20 rounded hover:bg-G/50/40 transition">Start</button>
+    </div>
+    
+    <div id="qn" class="absolute flex flex-col flex-none w-screen h-screen hidden">
+        <div id="blub" class="flex justify-evenly items-center self-center max-w-[33vh] mx-auto my-8">
+        </div>
+
+        <div id="ngrid" class=" justify-self-center self-center justify-evenly flex flex-row  flex-wrap  max-w-[clamp(1rem,100vh,80vw)] gap-2">
+            <!-- Required, for tailwind to render -->
+            <div class="size-1/10  text-G  bg-B">1</div>
+            <div class="size-1/10  text-R bg-Y">2</div>
+            <div class="size-1/10  text-Y bg-R">3</div>
+            <div class="size-1/10  text-B bg-G">4</div>
+            <div class="size-1/10  text-G  bg-B/50">1</div>
+            <div class="size-1/10  text-R bg-Y/50">2</div>
+            <div class="size-1/10  text-Y bg-R/50">3</div>
+            <div class="size-1/10  text-B bg-G/50">4</div>
+        </div>
+
+        <div id="btns" class="my-5 flex flex-row w-full justify-evenly  flex-wrap">
+        </div>
+    </div>
+
+    <div  id="answer" class="absolute inset-0 w-screen h-screen justify-center items-center flex flex-col  flex-none hidden ">
+        <h2 class="text-[clamp(1rem,4vw,2.5rem)]">Your Number is ...</h2>
+        <h1 id="ans_num" class="text-[clamp(1rem,20vw,10rem)]"></h1>
+        <button onclick="location.reload()" class="m-5 text-md text-dim hover:text-white transition">↺ Retry</button>
+        <a href="https://github.com/yourusername" target="_blank" class="text-dim hover:text-white transition">
+            How It works / Source Code <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+        </a>
+
+        </div>
+    </div>
+</body>
+</html>
