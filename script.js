@@ -136,9 +136,9 @@ const initialise=(e)=>{
         if (["ArrowLeft","ArrowRight"].includes(e.key)) flip(e.key=="ArrowRight")
     });
     $(window)
-    .on('wheel', function(e){
-        flip(e.originalEvent.deltaY < 0)
-    })
+    // .on('wheel', function(e){
+    //     flip(e.originalEvent.deltaY < 0)
+    // })
     .on("touchstart", e => startX = e.originalEvent.touches[0].clientX)
     .on("touchend", e => {
         const diff = startX - e.originalEvent.changedTouches[0].clientX;
